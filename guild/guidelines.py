@@ -79,55 +79,176 @@ RULES = (
     (
         "Don't spam or flood",
         (
-            "Users sending a large chunk of text with no context",
+            "Obvious copypasta",
+            (
+                "Delete the message and add a warn to the user.",
+                "Mute the user (1h) if they continue.",
+                "Ban the user (1d) if they continue.",
+            ),
         ),
         (
-            "Users sending a large chunk of text within context of the conversation",
+            "Users sending a single large chunk of text with no context",
+            (
+                "Delete the message and add a warn to the user.",
+                "Mute the user (1h) if they continue.",
+                "Ban the user (1d) if they continue.",
+            ),
+        ),
+        (
+            "Users sending a single large chunk of text within context of the conversation",
+            (
+                "This is fine.",
+                "If it starts taking up a large chunk of chat (ie the users are sending essays to each other) then tell the users to move to DMs.",
+                "If they continue, moderate as if there were no context.",
+            ),
         ),
         (
             "Users sending multiple short messages over a short time",
+            (
+                "This is generally what most people refer to as spamming.",
+                "Ban (1d).",
+            )
         ),
         (
             "Users sending multiple long messages over a short time",
+            (
+                "This is generally what most people refer to as spamming.",
+                "Ban (1d).",
+            ),
+        ),
+        (
+            "Users screaming into VCs",
+            (
+                "Server mute and warn the user.",
+            ),
+        ),
+        (
+            "Users with annoying background audio in VCs",
+            (
+                "Ask the user nicely to mute themselves.",
+                "If they don't, server mute them. Do not warn them."
+            ),
         ),
     ),
     (
         "Stay respectful and kind to all users on the server",
+        (
+            "People using slurs",
+            (
+                "Delete the message. Mute the user (2h).",
+                "If they repeat this, ban the user (30d).",
+            ),
+        ),
+        (
+            "Insulting other users",
+            (
+                "Tell the user to be respectful towards others",
+                "If they continue to be agressive and rude, mute the user (10m)",
+                "If they continue, mute the user (2h).",
+                "If they continue, ban the user (1d).",
+            ),
+        ),
+        (
+            "Insulting other users when we know those users to be friends",
+            (
+                "Keep an eye on the conversation, but this is generally fine.",
+                "If the insults start getting personal or agressive, tell the users they might be going too far.",
+                "This is in place to allow \"Kae you cuck\" but disallow \"fuck you Kae this is why nobody loves you\".",
+                "If they continue, moderate as if the users didn't know each other.",
+            ),
+        ),
+        (
+            "Users insulting themselves",
+            (
+                "A bit of a downer on conversations so I don't really want this in my server any more.",
+                "Remind users that they need to be respectful towards themselves - not necessarily nice, but not explicitly a cunt.",
+                "\"I don't like myself\" is fine. \"I fucking hate myself\" is not. This will require context to moderate.",
+                "Mute the user (10m) if they continue.",
+                "This is not a bannable offense.",
+            ),
+        ),
+        (
+            "Deliberately starting [agressive] arguments",
+            (
+                "This is reserved for _agressive_ arguments. Users are allowed to argue.",
+                "Remind the user to be respectful to others and to stop the topic if they cannot."
+                "If they continue, mute the user (30m).",
+                "If they continue, ban the user (1d).",
+            ),
+        ),
+        (
+            "Posting flashing images/gifs",
+            (
+                "Delete the image. Tell the user to avoid posting flashing images.",
+            ),
+        ),
     ),
     (
         "Don't post personally identifying information (PII)",
         (
             "Posting full names",
+            (
+                "Remind the user to not post PII.",
+                "Mute (30m) if they continue.",
+                "Ban (1d) if they continue.",
+            ),
         ),
         (
             "Posting phone numbers",
+            (
+                "Remind the user to not post PII.",
+                "Mute (30m) if they continue.",
+                "Ban (1d) if they continue.",
+            ),
         ),
         (
             "Posting obviously fake phone numbers (555 numbers)",
-        ),
-        (
-            "Posing addresses",
-        ),
-        (
-            "Catfishing",
             (
-                "Is this something we should even deal with?",
-            )
+                "Remind the user to not post PII, and the fact that it's fake just makes real ones harder to moderate.",
+                "Mute (30m) if they continue.",
+            ),
+        ),
+        (
+            "Posting addresses",
+            (
+                "Remind the user to not post PII.",
+                "Mute (30m) if they continue.",
+                "Ban (1d) if they continue.",
+            ),
         ),
     ),
     (
         "Don't post NSFW (not safe for work) content",
         (
             "Posting sexually suggestive text",
+            (
+                "Delete the message and remind the user to keep SFW.",
+                "Warn if they continue.",
+                "Mute (10m) if they continue.",
+                "Ban (1d) if they continue.",
+            ),
         ),
         (
             "Posting sexually suggestive images/gifs",
+            (
+                "Delete the message and remind the user to keep SFW.",
+                "Mute (1h) if they continue.",
+                "Ban (1d) if they continue.",
+            ),
         ),
         (
             "Posting sexually explicit text",
+            (
+                "Delete the message and add a warn to the user.",
+                "Ban (7d) if they continue.",
+            ),
         ),
         (
             "Posting sexually explicit images",
+            (
+                "Ban the user (30d).",
+                "Optionally report them to Discord Trust and Safety (https://dis.gd/report).",
+            ),
         ),
     ),
     (
@@ -154,14 +275,26 @@ RULES = (
         "Keep conversations in English",
         (
             "Sending short phrases in other languages",
+            (
+                "Generally fine.",
+                "If they start _only_ talking in short phrases, remind the user to keep to English or to keep their non-English messages to a minimum.",
+            ),
         ),
         (
             "Sending whole-ass sentences in other languages",
+            (
+                "Verbally remind the user to keep to English.",
+                "If they continue, mute the user (10m).",
+                "If they continue, mute the user (2h).",
+            )
         ),
         (
             "Straight up conversing with another user in another language",
             (
                 "This generally would apply to the new users joining who don't primarily speak English.",
+                "Verbally remind the user to keep to English.",
+                "If they continue, mute the user (30m).",
+                "If they continue, ban the user (1d).",
             ),
         ),
     ),
@@ -179,15 +312,36 @@ RULES = (
         "Keep your messages within the topic of the given channel",
         (
             "Bot commands in general",
+            (
+                "_A few_ bot commands are fine, as well as the interactions (hug/kiss/etc) and paint being generally alright.",
+                "Repeated bot commands should have a verbal warning saying to keep to <#490991441255071745>.",
+                "Continued bot commands should have a mute (10m).",
+            ),
         ),
         (
             "Off-topic messages in the coding channel",
+            (
+                "This is generally Kae's domain to deal with.",
+                "If someone posts there about topics that are irrelevant to the current discussion or things that definitely don't belong, verbal warning.",
+                "Continuing on these conversations should come with a mute (10m).",
+                "Continuing on these conversations should come with a mute (2h).",
+            ),
         ),
         (
             "Off-topic messages in the art channel",
+            (
+                "Verbally warn the user that they need to keep on the topic of the art or the channel.",
+                "Continuing conversation should result in a mute (10m).",
+                "Continuing conversation should result in a mute (2h).",
+            ),
         ),
         (
             "Conversing in the bot support/ideas channels",
+            (
+                "Verbally tell the user to keep on topic.",
+                "Continuing conversation should result in a mute (10m).",
+                "Continuing conversation should result in a mute (2h).",
+            ),
         ),
     ),
     (
@@ -201,6 +355,9 @@ RULES = (
         ),
         (
             "Users claiming other people's work as their own",
+            (
+                "Delete the message. Add the art ban role to the user.",
+            ),
         ),
     ),
     (
