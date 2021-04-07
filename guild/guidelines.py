@@ -220,7 +220,7 @@ RULES = (
         (
             "People doing anything",
             (
-                "This rule is specifically here to deal with things athat are shitty but aren't explicitly stated.",
+                "This rule is specifically here to deal with things that are shitty but aren't explicitly stated.",
                 "As someone who's been on the internet forever I know that everyone will follow every opportunity to break the rules.",
                 "If people are being cucks, this is here so you can tell them not to be.",
                 "_Do not rely on this to moderate_. Look at the other rules first. You are here to make the server a better place, not go on an ego trip.",
