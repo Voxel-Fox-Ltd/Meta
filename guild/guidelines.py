@@ -96,9 +96,39 @@ RULES = (
     ),
     (
         "Don't post personally identifying information (PII)",
+        (
+            "Posting full names",
+        ),
+        (
+            "Posting phone numbers",
+        ),
+        (
+            "Posting obviously fake phone numbers (555 numbers)",
+        ),
+        (
+            "Posing addresses",
+        ),
+        (
+            "Catfishing",
+            (
+                "Is this something we should even deal with?",
+            )
+        ),
     ),
     (
         "Don't post NSFW (not safe for work) content",
+        (
+            "Posting sexually suggestive text",
+        ),
+        (
+            "Posting sexually suggestive images/gifs",
+        ),
+        (
+            "Posting sexually explicit text",
+        ),
+        (
+            "Posting sexually explicit images",
+        ),
     ),
     (
         "Don't advertise",
@@ -122,6 +152,18 @@ RULES = (
     ),
     (
         "Keep conversations in English",
+        (
+            "Sending short phrases in other languages",
+        ),
+        (
+            "Sending whole-ass sentences in other languages",
+        ),
+        (
+            "Straight up conversing with another user in another language",
+            (
+                "This generally would apply to the new users joining who don't primarily speak English.",
+            ),
+        ),
     ),
     (
         "Have a typable nickname",
@@ -135,6 +177,18 @@ RULES = (
     ),
     (
         "Keep your messages within the topic of the given channel",
+        (
+            "Bot commands in general",
+        ),
+        (
+            "Off-topic messages in the coding channel",
+        ),
+        (
+            "Off-topic messages in the art channel",
+        ),
+        (
+            "Conversing in the bot support/ideas channels",
+        ),
     ),
     (
         "Source all artwork you post in the art channel",
@@ -151,9 +205,27 @@ RULES = (
     ),
     (
         "If you ask to be punished, you will more than likely receive that punishment",
+        (
+            "People asking for punishments",
+            (
+                "If it's a ban, just fuckin give it to em (1d, 0ddays).",
+                "Kicks and mutes I don't particularly want to encourage being asked for, however.",
+                "If someone asks for a kick, offer them a ban.",
+                "If someone asks for a mute, say no but then offer them a ban if they're being assholes about it.",
+            ),
+        ),
     ),
     (
         "Situations that are not explicitly stated in the rules and negatively impact the server experience may still be punishable offenses",
+        (
+            "People doing anything",
+            (
+                "This rule is specifically here to deal with things athat are shitty but aren't explicitly stated.",
+                "As someone who's been on the internet forever I know that everyone will follow every opportunity to break the rules.",
+                "If people are being cucks, this is here so you can tell them not to be.",
+                "_Do not rely on this to moderate_. Look at the other rules first. You are here to make the server a better place, not go on an ego trip.",
+            ),
+        ),
     ),
     (
         "MarriageBot Commands",
@@ -202,12 +274,19 @@ RULES = (
             (
                 "`-d` - Days to ban the user for.",
                 "`-ddays` - Days to delete messages for.",
+                "Most - if not all - bans should have a duration tied to them.",
             ),
         ),
         (
             "`-mute <user> <time> <reason>`",
             (
                 "Gives the `Muted` role to the user for the specified amount of time.",
+            ),
+        ),
+        (
+            "`-warn <user> <reason>`",
+            (
+                "Adds a note to the user's account",
             ),
         ),
     ),
