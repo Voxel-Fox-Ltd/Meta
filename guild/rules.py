@@ -31,10 +31,9 @@ RULES = (
         ],
     ),
     (
-        "{n}) Don't post personally identifying information (PII).",
+        "{n}) Don't post personally identifying information (PII) of other users.",
         [
             "{n}) Information such as an address, a surname, an IP address, etc is classed as PII.",
-            "{n}) This applies to both your own and other people's information.",
             "{n}) Information that isn't personally identifying (a first name, a city, etc) is allowed.",
         ],
     ),
