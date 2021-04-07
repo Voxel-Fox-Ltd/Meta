@@ -382,6 +382,15 @@ RULES = (
                 "If people are being cucks, this is here so you can tell them not to be.",
                 "_Do not rely on this to moderate_. Look at the other rules first. You are here to make the server a better place, not go on an ego trip.",
             ),
+            (
+                "People questioning your moderation",
+                (
+                    "Direct them to either the feedback channel or to the email.",
+                    "General isn't the place to keep these kinds of discussions.",
+                    "_Do not get heated. Learn to walk away from a situation if you need to._",
+                    "You are also subject to the rules.",
+                ),
+            ),
         ),
     ),
     (
